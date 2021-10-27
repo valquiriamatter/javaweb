@@ -1,0 +1,16 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="Jetty Runner" type="JettyRunner-By-GuiKeller" factoryName="Jetty Runner">
+    <option name="JettyRunnerV130-SelectedModuleName" value="gerenciadorJPA" />
+    <option name="JettyRunnerV130-WebAppPath" value="/gerenciadorJPA" />
+    <option name="JettyRunnerV130-WebAppFolder" value="C:\Users\valqsant\eclipse-workspace\gerenciadorJPA\Web-Content" />
+    <option name="JettyRunnerV130-ClassesDirectory" value="C:\Users\valqsant\eclipse-workspace\gerenciadorJPA\target\classes" />
+    <option name="JettyRunnerV130-RunOnPort" value="8080" />
+    <option name="JettyRunnerV130-JettyRunnerPath" value="C:\Desenvolvimento\JARs\Jetty\jetty-runner-11.0.6.jar" />
+    <option name="JettyRunnerV130-JettyXML" value="" />
+    <option name="JettyRunnerV130-VmArgs" value="" />
+    <option name="JettyRunnerV130-PassParentEnvVars" value="true" />
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>

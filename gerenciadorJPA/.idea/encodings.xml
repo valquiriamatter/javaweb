@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/Web-Content/WEB-INF/view/formLogin.jsp" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/Web-Content/WEB-INF/view/listaColaborador.jsp" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/src/main/java/controller/AutorizacaoFilter.java" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/src/main/java/controller/ControladorFilter.java" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/src/main/java/controller/MonitoramentoFilter.java" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/src/main/java/controller/actions/colaborador/Login.java" charset="windows-1252" />
+    <file url="PROJECT" charset="windows-1252" />
+  </component>
+</project>

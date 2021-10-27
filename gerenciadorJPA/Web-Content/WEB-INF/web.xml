@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xlmns.jcp.org/xml/java"
+         xsi:schemaLocation="http://xlmns.jcp.org/xml/java ">
+
+<display-name>gerenciadorJPA</display-name>
+
+<welcome-file-list>
+<welcome-file>index.html</welcome-file>
+</welcome-file-list>
+
+<filter>
+<filter-name>AF</filter-name>
+<filter-class>controller.AutorizacaoFilter</filter-class>
+</filter>
+
+<filter-mapping>
+<filter-name>AF</filter-name>
+<url-pattern>/entrada</url-pattern>
+</filter-mapping>
+
+<filter>
+<filter-name>MF</filter-name>
+<filter-class>controller.MonitoramentoFilter</filter-class>
+</filter>
+
+<filter-mapping>
+<filter-name>MF</filter-name>
+<url-pattern>/entrada</url-pattern>
+</filter-mapping>
+
+<filter>
+<filter-name>CF</filter-name>
+<filter-class>controller.ControladorFilter</filter-class>
+</filter>
+
+<filter-mapping>
+<filter-name>CF</filter-name>
+<url-pattern>/entrada</url-pattern>
+</filter-mapping>
+
+</web-app>
