@@ -19,7 +19,7 @@ public class Pedido {
     private String descricao;
 
     @Enumerated(EnumType.STRING)
-    private StatusPedido statusPedido;
+    private StatusPedido status;
 
     public String getNomeProduto() {
         return nomeProduto;
@@ -69,6 +69,14 @@ public class Pedido {
         this.descricao = descricao;
     }
 
+    public StatusPedido getStatus() {
+        return status;
+    }
+
+    public void setStatus(StatusPedido status) {
+        this.status = status;
+    }
+
     @Override
     public String toString() {
         return "Pedido{" +
@@ -79,6 +87,7 @@ public class Pedido {
                 ", urlProduto='" + urlProduto + '\'' +
                 ", urlImagem='" + urlImagem + '\'' +
                 ", descricao='" + descricao + '\'' +
+                ", status='" + status + '\'' +
                 '}';
     }
 }

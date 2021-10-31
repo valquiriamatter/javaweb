@@ -44,7 +44,7 @@ public class PedidoController {
         pedidoRepository.save(pedido);
         System.out.println(pedido);
 
-        return "pedido/formulario";
+        return "redirect:/home";
     }
 
 
