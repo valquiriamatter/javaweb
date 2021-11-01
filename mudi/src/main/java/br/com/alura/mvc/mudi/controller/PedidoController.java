@@ -26,13 +26,6 @@ public class PedidoController {
         return "pedido/formulario";
     }
 
-    //action
-    @GetMapping("formulariook")
-    public String formularioOk(RequisicaoNovoPedido requisicao){
-        return "pedido/formulariook";
-    }
-
-
     @PostMapping("novo")
     public String novo(@Valid RequisicaoNovoPedido requisicao, BindingResult bindingResult){
 
