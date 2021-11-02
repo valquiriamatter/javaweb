@@ -14,12 +14,26 @@ public class Pedido {
     private String nomeProduto;
     private BigDecimal valorNegociado;
     private LocalDate dataEntrega;
+
+    @Column(length=512)
     private String urlProduto;
+
     private String urlImagem;
     private String descricao;
 
     @Enumerated(EnumType.STRING)
     private StatusPedido status;
+
+    @ManyToOne(fetch = FetchType.LAZY) //classe para atributo
+    private User user;
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
 
     public String getNomeProduto() {
         return nomeProduto;
@@ -90,4 +104,6 @@ public class Pedido {
                 ", status='" + status + '\'' +
                 '}';
     }
+
+
 }

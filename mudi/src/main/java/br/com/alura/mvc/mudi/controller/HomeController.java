@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import java.security.Principal;
 import java.util.List;
 
 //anotando como controlador
@@ -22,10 +23,10 @@ public class HomeController {
     private PedidoRepository pedidoRepository;
 
     //path
-    @GetMapping
-    public String home(Model model){
+    @GetMapping                     //sabe quem é o usuário logado
+    public String home(Model model, Principal principal){
 
-        List<Pedido> pedidos = pedidoRepository.findAll();
+        List<Pedido> pedidos = pedidoRepository.findAllByUsuario(principal.getName());
 
         //add a lista na requisicao
         model.addAttribute("pedidos", pedidos);
