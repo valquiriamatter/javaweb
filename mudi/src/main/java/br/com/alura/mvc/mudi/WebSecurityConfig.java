@@ -26,14 +26,19 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http
                 .authorizeRequests() //para todas as autorizacoes
+                .antMatchers("/home/**") //excecao pra pagina home
+                .permitAll()
                 .anyRequest().authenticated() //usuario deve extar logado
                 .and()
                 .formLogin(form -> form.loginPage("/login")//url da pagina de login
-                        .defaultSuccessUrl("/home", true)
+                        .defaultSuccessUrl("/usuario/pedido", true)
                         .permitAll()//todos podem acessar a pagina de login
                 )
-                .logout(logout -> logout.logoutUrl("/logout"))
-                .csrf().disable(); //desativando uma configuração de segurança desncessária nesse momento (cross-site-request-forgery)
+                .logout(logout -> {
+                    logout.logoutUrl("/logout")
+                            .logoutSuccessUrl("/home");
+                });
+                //.csrf().disable(); //desativando uma configuração de segurança desncessária nesse momento (cross-site-request-forgery)
     }
 
     protected void configure(AuthenticationManagerBuilder authBuilder) throws Exception {

@@ -24,7 +24,7 @@ public class Pedido {
     @Enumerated(EnumType.STRING)
     private StatusPedido status;
 
-    @ManyToOne(fetch = FetchType.LAZY) //classe para atributo
+    @ManyToOne(fetch = FetchType.EAGER) //classe para atributo
     private User user;
 
     public User getUser() {
