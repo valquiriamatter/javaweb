@@ -3,6 +3,8 @@ package br.com.alura.mvc.mudi.model;
 import javax.persistence.*;
 import java.math.BigDecimal;
 import java.time.LocalDate;
+import java.util.Calendar;
+import java.util.List;
 
 @Entity
 public class Pedido {
@@ -15,7 +17,7 @@ public class Pedido {
     private BigDecimal valorNegociado;
     private LocalDate dataEntrega;
 
-    @Column(length=512)
+    @Column(length = 512)
     private String urlProduto;
 
     private String urlImagem;
@@ -26,6 +28,9 @@ public class Pedido {
 
     @ManyToOne(fetch = FetchType.EAGER) //classe para atributo
     private User user;
+    //referenciando a outra ponta
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "pedido", fetch = FetchType.LAZY)
+    private List<Oferta> ofertas; //classe para atributo
 
     public User getUser() {
         return user;
@@ -91,6 +96,10 @@ public class Pedido {
         this.status = status;
     }
 
+    public List<Oferta> getOfertas() {
+        return ofertas;
+    }
+
     @Override
     public String toString() {
         return "Pedido{" +
@@ -104,6 +113,7 @@ public class Pedido {
                 ", status='" + status + '\'' +
                 '}';
     }
-
-
 }
+
+
+

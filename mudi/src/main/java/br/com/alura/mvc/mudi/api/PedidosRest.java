@@ -19,14 +19,16 @@ public class PedidosRest {
     @Autowired
     private PedidoRepository pedidoRepository;
 
-    @GetMapping("aguardando")
+    @GetMapping("aguardando") //endpoint aguardando ofertas
     public List<Pedido> getPedidosAguardandoOfertas(){
 
         Sort sort = Sort.by("id").descending();
         PageRequest paginacao = PageRequest.of(0,10, sort);
 
-        return pedidoRepository.findByStatus(StatusPedido.ENTREGUE, paginacao);
+        return pedidoRepository.findByStatus(StatusPedido.AGUARDANDO, paginacao);
 
     }
+
+
 
 }

@@ -5,11 +5,11 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-@RequestMapping("/templates/oferta")
+@RequestMapping("/oferta")
 public class OfertaController {
 
     @GetMapping
     public String getFormularioParaOfertas(){
-        return "templates/oferta/home";
+        return "oferta/home";
     }
 }
