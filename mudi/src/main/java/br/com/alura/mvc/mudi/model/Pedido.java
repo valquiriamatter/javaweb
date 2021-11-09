@@ -3,7 +3,6 @@ package br.com.alura.mvc.mudi.model;
 import javax.persistence.*;
 import java.math.BigDecimal;
 import java.time.LocalDate;
-import java.util.Calendar;
 import java.util.List;
 
 @Entity

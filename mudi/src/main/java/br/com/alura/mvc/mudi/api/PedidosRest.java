@@ -14,7 +14,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/pedidos")
-public class PedidosRest {
+public class PedidosRest{
 
     @Autowired
     private PedidoRepository pedidoRepository;
