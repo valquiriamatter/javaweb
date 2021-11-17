@@ -19,6 +19,7 @@ public class PedidosRest{
     @Autowired
     private PedidoRepository pedidoRepository;
 
+    //endpoint
     @GetMapping("aguardando") //endpoint aguardando ofertas
     public List<Pedido> getPedidosAguardandoOfertas(){
 

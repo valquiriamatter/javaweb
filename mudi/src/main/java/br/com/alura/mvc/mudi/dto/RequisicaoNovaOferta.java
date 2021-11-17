@@ -2,6 +2,8 @@ package br.com.alura.mvc.mudi.dto;
 
 import br.com.alura.mvc.mudi.model.Oferta;
 
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
@@ -10,8 +12,13 @@ public class RequisicaoNovaOferta {
 
     private static final DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/YYYY");
 
+
     private Long idPedido;
+    @NotNull //começa com dígito, "\" é caractere especial, então tem que escapar ela, por 2x, + dígitos {2} digitos
+    @Pattern(regexp = "^\\d+(\\.\\d{2})?$") // ? pode ou não vir, $ mais nada
     private String valor;
+    @NotNull
+    @Pattern(regexp = "^\\d{2}/\\{2}/\\{4}$")
     private String dataEntrega;
     private String comentario;
 

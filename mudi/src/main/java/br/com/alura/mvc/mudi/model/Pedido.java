@@ -1,5 +1,7 @@
 package br.com.alura.mvc.mudi.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import java.math.BigDecimal;
 import java.time.LocalDate;
@@ -25,10 +27,12 @@ public class Pedido {
     @Enumerated(EnumType.STRING)
     private StatusPedido status;
 
-    @ManyToOne(fetch = FetchType.EAGER) //classe para atributo
+    @ManyToOne(fetch = FetchType.EAGER)//classe para atributo
+    @JsonIgnore //pra evitar que entre em loop ao tentar ficar serializando
     private User user;
     //referenciando a outra ponta
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "pedido", fetch = FetchType.LAZY)
+    @JsonIgnore
     private List<Oferta> ofertas; //classe para atributo
 
     public User getUser() {
