@@ -1,12 +1,15 @@
 package com.ibe.ibe.models;
 
-import javax.persistence.Embedded;
-import javax.persistence.Entity;
+import javax.persistence.*;
 
 @Entity
 public class Visitante {
 
-    @Embedded
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    @OneToOne
     private Pessoa pessoa;
 
     private Boolean iniciante = true;
@@ -15,10 +18,19 @@ public class Visitante {
     public Visitante() {
     }
 
-    public Visitante(Pessoa pessoa, Boolean iniciante, Boolean ativo) {
+    public Visitante(Long id, Pessoa pessoa, Boolean iniciante, Boolean ativo) {
+        this.id = id;
         this.pessoa = pessoa;
         this.iniciante = iniciante;
         this.ativo = ativo;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public Pessoa getPessoa() {

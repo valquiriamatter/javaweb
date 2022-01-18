@@ -4,12 +4,11 @@ import javax.persistence.*;
 import java.time.LocalDate;
 
 @Entity
-@Embeddable
 public class Pessoa {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private Long id;
 
     private String nome;
     private LocalDate dataNascimento;
@@ -17,26 +16,26 @@ public class Pessoa {
     private String email;
 
     @Embedded
-    private Endereco endereço;
+    private Endereco endereco;
 
 
     public Pessoa() {
     }
 
-    public Pessoa(int id, String nome, LocalDate dataNascimento, String telefone, String email, Endereco endereço) {
+    public Pessoa(Long id, String nome, LocalDate dataNascimento, String telefone, String email, Endereco endereço) {
         this.id = id;
         this.nome = nome;
         this.dataNascimento = dataNascimento;
         this.telefone = telefone;
         this.email = email;
-        this.endereço = endereço;
+        this.endereco = endereco;
     }
 
-    public Integer getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -72,11 +71,11 @@ public class Pessoa {
         this.email = email;
     }
 
-    public Endereco getEndereço() {
-        return endereço;
+    public Endereco getEndereco() {
+        return endereco;
     }
 
-    public void setEndereço(Endereco endereço) {
-        this.endereço = endereço;
+    public void setEndereco(Endereco endereco) {
+        this.endereco = endereco;
     }
 }

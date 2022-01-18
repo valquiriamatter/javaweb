@@ -8,7 +8,11 @@ import java.util.List;
 @Entity
 public class Membro {
 
-    @Embedded
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    @OneToOne
     private Pessoa pessoa;
 
     private String foto;
@@ -23,13 +27,22 @@ public class Membro {
     @OneToOne
     private Pessoa conjuge;
 
-    @OneToMany
-    private List<Pessoa> filhos;
+//    @ManyToMany(fetch = FetchType.EAGER)
+//    @JoinTable(name = "membro_filhos", joinColumns = {
+//            @JoinColumn(name = "membro_id")},
+//            inverseJoinColumns = {@JoinColumn (name = "filho_id")})
+
+
+    @ManyToMany
+    @JoinTable(name="mebros_has_filhos", joinColumns=
+            {@JoinColumn(name="membros_id")}, inverseJoinColumns=
+            {@JoinColumn(name="filhos_id")})
+    private List<Filho> filhos;
 
     private LocalDate dataBatismo;
     private String localBatismo;
 
-    @Enumerated
+    @Enumerated(EnumType.STRING)
     private TipoAceite estaIBEpor;
 
     private Boolean ativo = true;
@@ -119,11 +132,11 @@ public class Membro {
         this.conjuge = conjuge;
     }
 
-    public List<Pessoa> getFilhos() {
+    public List<Filho> getFilhos() {
         return filhos;
     }
 
-    public void setFilhos(List<Pessoa> filhos) {
+    public void setFilhos(List<Filho> filhos) {
         this.filhos = filhos;
     }
 
