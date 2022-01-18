@@ -54,6 +54,35 @@ public class PessoaController {
         return ResponseEntity.created(uri).body(pessoaOK);
     }
 
+//    @PostMapping("/viacep")
+//    public ResponseEntity<PessoaDTO> salvarViaCep(@RequestBody @Valid PessoaDTO pessoaRequestDTO, UriComponentsBuilder uriBuilder) {
+//
+//        //fazendo a conversao de dto para entidade
+//        Pessoa pessoa = mapper.map(pessoaRequestDTO, Pessoa.class);
+//
+//        Pessoa pessoaCriada = service.salvar(pessoa);
+//
+//        //jeito Lilian
+//
+//        //mapeando de DTO para Entidade
+//        //UserEntity userEntity = mapper.map(userDTO, UserEntity.class);
+//        //UserEntity userCreated = service.create(userEntity);
+//
+//        //mapeando de Entidade para DTO         //entidade     //dto
+//        //UserDTO userDtoResponse = mapper.map(userCreated, UserDTO.class);
+//
+//        //jeito antigo
+//        //Cliente cliente = clienteForm.converteFormClienteParaCliente(enderecoService);
+//        //service.salvar(cliente);
+//        //return ResponseEntity.created(uri).body(new VisitanteDTO(visitante));
+//
+//        URI uri = uriBuilder.path("/pessoas/{id}").buildAndExpand(pessoa.getId()).toUri();
+//
+//        PessoaDTO pessoaOK = mapper.map(pessoaCriada, PessoaDTO.class);
+//
+//        return ResponseEntity.created(uri).body(pessoaOK);
+//    }
+
 
 //    @GetMapping("/{id}")
 //    public ResponseEntity<ClienteDTO> detalhar(@PathVariable Long id) {

@@ -8,12 +8,13 @@ public class PessoaDTO {
     private LocalDate dataNascimento;
     private String telefone;
     private String email;
+    private EnderecoDTO enderecoDTO;
 
-    private String rua;
-    private String numero;
-    private String bairro;
-    private String cidade;
-    private String estado;
+//    private String enderecoRua;
+//    private String enderecoNumero;
+//    private String enderecoBairro;
+//    private String enderecoCidade;
+//    private String enderecoEstado;
 
     public PessoaDTO() {
     }
@@ -50,43 +51,51 @@ public class PessoaDTO {
         this.email = email;
     }
 
-    public String getRua() {
-        return rua;
+    public EnderecoDTO getEnderecoDTO() {
+        return enderecoDTO;
     }
 
-    public void setRua(String rua) {
-        this.rua = rua;
+    public void setEnderecoDTO(EnderecoDTO enderecoDTO) {
+        this.enderecoDTO = enderecoDTO;
     }
 
-    public String getNumero() {
-        return numero;
-    }
-
-    public void setNumero(String numero) {
-        this.numero = numero;
-    }
-
-    public String getBairro() {
-        return bairro;
-    }
-
-    public void setBairro(String bairro) {
-        this.bairro = bairro;
-    }
-
-    public String getCidade() {
-        return cidade;
-    }
-
-    public void setCidade(String cidade) {
-        this.cidade = cidade;
-    }
-
-    public String getEstado() {
-        return estado;
-    }
-
-    public void setEstado(String estado) {
-        this.estado = estado;
-    }
+    //    public String getEnderecoRua() {
+//        return enderecoRua;
+//    }
+//
+//    public void setEnderecoRua(String enderecoRua) {
+//        this.enderecoRua = enderecoRua;
+//    }
+//
+//    public String getEnderecoNumero() {
+//        return enderecoNumero;
+//    }
+//
+//    public void setEnderecoNumero(String enderecoNumero) {
+//        this.enderecoNumero = enderecoNumero;
+//    }
+//
+//    public String getEnderecoBairro() {
+//        return enderecoBairro;
+//    }
+//
+//    public void setEnderecoBairro(String enderecoBairro) {
+//        this.enderecoBairro = enderecoBairro;
+//    }
+//
+//    public String getEnderecoCidade() {
+//        return enderecoCidade;
+//    }
+//
+//    public void setEnderecoCidade(String enderecoCidade) {
+//        this.enderecoCidade = enderecoCidade;
+//    }
+//
+//    public String getEnderecoEstado() {
+//        return enderecoEstado;
+//    }
+//
+//    public void setEnderecoEstado(String enderecoEstado) {
+//        this.enderecoEstado = enderecoEstado;
+//    }
 }
